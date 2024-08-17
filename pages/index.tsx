@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useInterval } from '../hooks/useInterval';
 
 const API_KEY = 'cc2577ef867decbe177dea0f28d5f028';
 const MOVIE_API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`;
@@ -23,13 +24,22 @@ export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [tvShows, setTvShows] = useState<TVShow[]>([]);
 
+  const fetchData = async () => {
+    try {
+      const movieResponse = await axios.get(MOVIE_API_URL);
+      setMovies(movieResponse.data.results);
+
+      const tvResponse = await axios.get(TV_API_URL);
+      setTvShows(tvResponse.data.results);
+    } catch (error) {
+      console.error("Erro ao buscar dados", error);
+    }
+  };
+
+  useInterval(fetchData, 30 * 60 * 1000);
+
   useEffect(() => {
-    axios.get(MOVIE_API_URL).then(response => {
-      setMovies(response.data.results);
-    });
-    axios.get(TV_API_URL).then(response => {
-      setTvShows(response.data.results);
-    });
+    fetchData();
   }, []);
 
   return (

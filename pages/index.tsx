@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const API_KEY = 'cc2577ef867decbe177dea0f28d5f028';
-const MOVIE_API_URL = 'https://api.themoviedb.org/3/movie/popular?api_key=' + API_KEY;
-const TV_API_URL = 'https://api.themoviedb.org/3/tv/popular?api_key=' + API_KEY;
+const MOVIE_API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`;
+const TV_API_URL = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=pt-BR`;
 
 type Movie = {
   id: number;

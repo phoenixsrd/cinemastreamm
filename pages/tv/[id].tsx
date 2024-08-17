@@ -17,7 +17,7 @@ export default function TVShowDetails({ tvShow }: TVShowDetailsProps) {
       <h1>{tvShow.name}</h1>
       <img src={`https://image.tmdb.org/t/p/w500${tvShow.poster_path}`} alt={tvShow.name} />
       <p>{tvShow.overview}</p>
-      <p>Data de Estreia: {tvShow.first_air_date}</p>
+      <p>Data De Estreia: {tvShow.first_air_date}</p>
     </div>
   );
 }

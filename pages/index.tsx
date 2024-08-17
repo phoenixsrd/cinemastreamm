@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import ThemeToggle from '../components/ThemeToggle';
 
 const API_KEY = 'cc2577ef867decbe177dea0f28d5f028';
 const MOVIE_API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`;
@@ -34,6 +35,7 @@ export default function Home() {
 
   return (
     <div>
+      <ThemeToggle />
       <h1>Filmes Populares</h1>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {movies.map(movie => (

@@ -1,14 +1,17 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+[data-theme='dark'] {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+[data-theme='light'] {
   background-color: #f4f4f4;
   color: #333;
 }
 
-[data-theme='dark'] {
-  background-color: #333;
-  color: #f4f4f4;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h3 {

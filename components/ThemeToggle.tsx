@@ -9,7 +9,7 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <button onClick={toggleTheme} style={{ margin: '10px', padding: '10px' }}>
-      Mudar para {theme === 'light' ? 'Escuro' : 'Claro'}
+      Mudar Para {theme === 'light' ? 'Escuro' : 'Claro'}
     </button>
   );
 };

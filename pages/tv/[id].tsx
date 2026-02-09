@@ -25,7 +25,7 @@ export default function TVShowDetails({ tvShow }: TVShowDetailsProps) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
   const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-  const response = await axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=${NEXT_PUBLIC_TMDB_API_KEY}&language=pt-BR`);
+  const response = await axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=pt-BR`);
 
   return {
     props: {

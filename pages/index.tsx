@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <div className="min-h-screen pb-10">
       <nav className="bg-gradient-to-r from-red-600 to-red-800 text-white p-6 shadow-lg mb-8">
-        <h1 className="text-3xl font-extrabold text-center tracking-wide">Cinema Stream</h1>
+        <h1 className="text-3xl font-extrabold text-center tracking-wide text-black">Cinema Stream</h1>
       </nav>
 
       <main className="container mx-auto px-4">

@@ -3,8 +3,8 @@ import axios from 'axios';
 import Link from 'next/link';
 
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-const MOVIE_API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${NEXT_PUBLIC_TMDB_API_KEY}&language=pt-BR`;
-const TV_API_URL = `https://api.themoviedb.org/3/tv/popular?api_key=${NEXT_PUBLIC_TMDB_API_KEY;}&language=pt-BR`;
+const MOVIE_API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`;
+const TV_API_URL = `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY;}&language=pt-BR`;
 
 type MediaItem = {
   id: number;

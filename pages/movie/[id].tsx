@@ -24,7 +24,7 @@ export default function MovieDetails({ movie }: MovieDetailsProps) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
-  const API_KEY = 'cc2577ef867decbe177dea0f28d5f028';
+  const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
   const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=pt-BR}`);
 
   return {

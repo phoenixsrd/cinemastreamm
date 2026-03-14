@@ -24,8 +24,17 @@ export default function TVShowDetails({ tvShow }: TVShowDetailsProps) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
+
+  // Validate that id is a string containing only digits (expected TMDB TV show ID format)
+  const tvId = typeof id === 'string' ? id : Array.isArray(id) ? id[0] : '';
+  if (!tvId || !/^\d+$/.test(tvId)) {
+    return {
+      notFound: true,
+    };
+  }
+
   const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
-  const response = await axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=pt-BR`);
+  const response = await axios.get(`https://api.themoviedb.org/3/tv/${tvId}?api_key=${API_KEY}&language=pt-BR`);
 
   return {
     props: {

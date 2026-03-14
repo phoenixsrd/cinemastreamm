@@ -26,7 +26,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
   const movieId = Array.isArray(id) ? id[0] : id;
 
-  // Validate that movieId is a non-empty string of digits to prevent malformed URLs.
   if (!movieId || typeof movieId !== 'string' || !/^\d+$/.test(movieId)) {
     return {
       notFound: true,

@@ -25,7 +25,6 @@ export default function TVShowDetails({ tvShow }: TVShowDetailsProps) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
 
-  // Validate that id is a string containing only digits (expected TMDB TV show ID format)
   const tvId = typeof id === 'string' ? id : Array.isArray(id) ? id[0] : '';
   if (!tvId || !/^\d+$/.test(tvId)) {
     return {

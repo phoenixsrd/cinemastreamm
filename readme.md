@@ -2,7 +2,7 @@
 
 ## 📖 Sobre o Projeto
 
-**CinemaStreamm** é uma plataforma web moderna e simples para descobrir **filmes** e **séries** populares.  
+**Cinema Streamm** é uma plataforma web moderna e simples para descobrir **filmes** e **séries** populares.  
 Totalmente em português (Brasil), o projeto usa a API oficial do **TMDB** (The Movie Database) para trazer dados em tempo real.
 
 - Cards com pôster, título e sinopse completa  

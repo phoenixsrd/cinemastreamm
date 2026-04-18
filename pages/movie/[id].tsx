@@ -51,7 +51,17 @@ const FAVORITES_STORAGE_KEY = 'cinema_streamm_favorites';
 
 const formatDate = (value: string) => {
   if (!value) return 'Data não informada';
-  return new Date(value).toLocaleDateString('pt-BR');
+
+  const dateOnlyMatch = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (dateOnlyMatch) {
+    const [, year, month, day] = dateOnlyMatch;
+    return `${day}/${month}/${year}`;
+  }
+
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return 'Data não informada';
+
+  return parsed.toLocaleDateString('pt-BR');
 };
 
 export default function MovieDetails({ movie, cast, recommendations, trailerKey }: MovieDetailsProps) {

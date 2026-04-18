@@ -48,6 +48,7 @@ type MovieDetailsProps = {
 };
 
 const FAVORITES_STORAGE_KEY = 'cinema_streamm_favorites';
+const ptBrDateFormatter = new Intl.DateTimeFormat('pt-BR', { timeZone: 'UTC' });
 
 const formatDate = (value: string) => {
   if (!value) return 'Data não informada';
@@ -55,13 +56,14 @@ const formatDate = (value: string) => {
   const dateOnlyMatch = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (dateOnlyMatch) {
     const [, year, month, day] = dateOnlyMatch;
-    return `${day}/${month}/${year}`;
+    const parsedDate = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
+    return ptBrDateFormatter.format(parsedDate);
   }
 
   const parsed = new Date(value);
   if (Number.isNaN(parsed.getTime())) return 'Data não informada';
 
-  return parsed.toLocaleDateString('pt-BR');
+  return ptBrDateFormatter.format(parsed);
 };
 
 export default function MovieDetails({ movie, cast, recommendations, trailerKey }: MovieDetailsProps) {

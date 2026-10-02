@@ -2,9 +2,5 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "env": {
-    "NODE_VERSION": "24.x"
-  },
-  "buildEnvironmentStrategy": "v2"
+  "installCommand": "npm install"
 }
